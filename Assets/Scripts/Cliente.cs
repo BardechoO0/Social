@@ -10,6 +10,11 @@ public class Cliente : MonoBehaviour
     GameObject x;
 
     int N_plato;
+
+    public int N_p;
+
+    [SerializeField] Platos pl;
+
     void Start()
     {
         N_plato = Random.Range(1, 4);
@@ -21,16 +26,22 @@ public class Cliente : MonoBehaviour
             
              x = Instantiate(Texst[0], gameObject.transform.position + new Vector3(1, 1, 0), Quaternion.Euler(0, 0, 0));
 
+            N_p = 3; 
+
 
         } else if (N_plato == 2) 
         {
             gameObject.tag = "Plato_2";
             x = Instantiate(Texst[1], gameObject.transform.position + new Vector3(1, 1, 0), Quaternion.Euler(0, 0, 0));
+
+            N_p = 2;
         }
         else if (N_plato == 3) 
         {
             gameObject.tag = "Plato_3";
             x = Instantiate(Texst[2], gameObject.transform.position + new Vector3(1, 1, 0), Quaternion.Euler(0, 0, 0));
+
+            N_p = 3;
         }
         
 
@@ -40,7 +51,7 @@ public class Cliente : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == gameObject.tag) {
+        if (collision.gameObject.tag == gameObject.tag && N_p == pl.N_paso) {
 
             sp.h();
 
@@ -48,6 +59,8 @@ public class Cliente : MonoBehaviour
 
             Destroy(x);
         
+
+            Destroy(collision.gameObject);
         }
     }
 

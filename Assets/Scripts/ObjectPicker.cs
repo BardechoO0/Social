@@ -32,9 +32,11 @@ public class ObjectPicker : MonoBehaviour
         if (obj != null)
         {
             heldObject = obj.gameObject;
-            heldObject.GetComponent<Collider2D>().enabled = false;
+            heldObject.GetComponent<Collider2D>().enabled = true;
+            heldObject.GetComponent<Collider2D>().isTrigger = true;
             heldObject.transform.position = holdPosition.position;
             heldObject.transform.parent = transform;
+
         }
     }
 
@@ -49,6 +51,7 @@ public class ObjectPicker : MonoBehaviour
                 heldObject.transform.position = spot.transform.position;
                 heldObject.transform.parent = null;
                 heldObject.GetComponent<Collider2D>().enabled = true;
+                heldObject.GetComponent<Collider2D>().isTrigger = false;
 
                 // Iniciar cambio de sprite
                 StartCoroutine(ChangeSpriteAfterDelay(heldObject, spot));
