@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      chef_stop_left_0: -3740465476197325456
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

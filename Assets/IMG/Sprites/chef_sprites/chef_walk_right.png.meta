@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      chef_walk_right_0: -2559395187279697324
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -13,6 +13,8 @@ public class Platos : MonoBehaviour
 
     public int plc;
 
+    public int pll;
+
     public float tiempo;
 
     public int IMG;
@@ -28,7 +30,7 @@ public class Platos : MonoBehaviour
 
         
 
-        if (x.GetComponent<SpriteRenderer>().sortingLayerName == Selecinecapa)
+        if (x.layer == pll)
         {
 
             StartCoroutine(mesa());
@@ -48,6 +50,11 @@ public class Platos : MonoBehaviour
 
             x.layer = plc;
 
+            if (Segundo_paso == true)
+            {
+                x.gameObject.tag = Selecinecapa;
+
+            }
 
         }
 
@@ -88,9 +95,10 @@ public class Platos : MonoBehaviour
     {
         if (collision.gameObject.tag == "Plato")
         {
-
-            StopCoroutine(Comprobar());
             ola = false;
+            StartCoroutine(Comprobar());
+
+            
         }
 
 
@@ -102,20 +110,22 @@ public class Platos : MonoBehaviour
 
         if (ola == true)
         {
-            if (x.GetComponent<SpriteRenderer>().sortingLayerName == "Default") {
-
-                N_paso++;
-                Plato_Sl(); 
-            
-            }else if(x.GetComponent<SpriteRenderer>().sortingLayerName =="Plato_1_1")
-            {
 
 
-            }
-                
+            N_paso++;
+            Plato_Sl();
+
+
+
         }
-        else {  }
-        StartCoroutine(Comprobar());
+        else if (ola == false) {
+
+
+            StopAllCoroutines();
+
+        }
+        
+        
 
 
 

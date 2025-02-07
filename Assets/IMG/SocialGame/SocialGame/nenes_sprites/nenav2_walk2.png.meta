@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      nenav2_walk2_0: -3593776572622736867
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

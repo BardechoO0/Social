@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      plato_cachapa_0: -7172417759630130573
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

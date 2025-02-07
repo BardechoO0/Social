@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      plato_arepa_crudo_0: 3932993155305633882
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

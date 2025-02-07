@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cachapa_0: -3160911529422236194
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

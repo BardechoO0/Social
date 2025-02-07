@@ -10,6 +10,8 @@ public class Cojer_objeto : MonoBehaviour
     public bool inHand=false;
 
     public KeyCode Tecla = KeyCode.E;
+
+    public Vector2 h;
     void Start()
     {
         
@@ -18,6 +20,29 @@ public class Cojer_objeto : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Plato" && inHand==false)
+        {
+            activo = true;
+
+            x = collision.gameObject;
+
+
+        }
+
+        if (collision.gameObject.tag == "Plato_2" && inHand == false)
+        {
+            activo = true;
+
+            x = collision.gameObject;
+        }
+
+        if (collision.gameObject.tag == "Plato_3" && inHand == false)
+        {
+            activo = true;
+
+            x = collision.gameObject;
+        }
+
+        if (collision.gameObject.tag == "Plato_1" && inHand == false)
         {
             activo = true;
 
@@ -34,10 +59,32 @@ public class Cojer_objeto : MonoBehaviour
             x = null;
         }
 
+        if (collision.gameObject.tag == "Plato_1" && inHand == false)
+        {
+            activo = false;
+
+            x = null;
+        }
+
+        if (collision.gameObject.tag == "Plato_2" && inHand == false)
+        {
+            activo = false;
+
+            x = null;
+        }
+
+        if (collision.gameObject.tag == "Plato_3" && inHand == false)
+        {
+            activo = false;
+
+            x = null;
+        }
+
 
     }
     void Update()
     {
+        h = transform.position;
         if (activo) {
 
             if (Input.GetKeyDown(Tecla) && inHand == false)
@@ -46,6 +93,8 @@ public class Cojer_objeto : MonoBehaviour
                 x.transform.SetParent(mano);
 
                 inHand = true;
+
+                
 
             }
             else if (Input.GetKeyDown(Tecla) && inHand == true) 
@@ -56,7 +105,11 @@ public class Cojer_objeto : MonoBehaviour
                 inHand = false;
 
             }
-        
+
+            if (inHand == true) 
+            {
+                x.transform.position = mano.position;
+            }
         
         }
     }

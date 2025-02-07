@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dialogo_coci_0: 4016475825530092638
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

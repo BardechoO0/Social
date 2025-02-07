@@ -24,7 +24,7 @@ public class Spawn_Clientes : MonoBehaviour
         {
             R = Random.Range(0, cliente.Length);
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(Random.Range(5f,10f));
 
             Instantiate(cliente[0], silla.transform.position, Quaternion.Euler(0, 0, 0));
 

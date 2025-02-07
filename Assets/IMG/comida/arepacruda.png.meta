@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      arepacruda_0: -8734561186797595731
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

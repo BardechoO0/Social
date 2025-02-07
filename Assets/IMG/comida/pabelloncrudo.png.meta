@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pabelloncrudo_0: 153319118974990794
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
