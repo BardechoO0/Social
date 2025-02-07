@@ -2,16 +2,19 @@ using System.Collections;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Cliente : MonoBehaviour
 {
+    [SerializeField] Vida vd;
+
     [SerializeField] Spawn_Clientes sp;
 
     [SerializeField] GameObject[] Texst = new GameObject[3] ;
 
     [SerializeField] Transform sillas;
 
-    [SerializeField] Animator[] ani= new Animator[3];
+    public bool Complentado = false;
 
     [SerializeField] TextMeshProUGUI tex;
     int puntos;
@@ -44,7 +47,7 @@ public class Cliente : MonoBehaviour
 
         y.transform.SetParent(gameObject.transform);
 
-        ani[1].SetBool("Andar", true);
+        
 
         if (N_plato == 1)
         {
@@ -80,9 +83,9 @@ public class Cliente : MonoBehaviour
     {
         if (collision.gameObject.tag == gameObject.tag) {
 
-
-            Ac();
             Destroy(collision.gameObject);
+            Ac();
+            
 
 
         }
@@ -95,13 +98,26 @@ public class Cliente : MonoBehaviour
 
             ver = true;
 
-
+            StartCoroutine(tiempo());
         }
     }
 
     IEnumerator tiempo()
     {
         yield return new WaitForSeconds(30f);
+        if (Complentado == false) {
+
+            vd.setActiveSprite(1);
+            
+            Ac();
+
+            if (vd.vidasCount <= 0) {
+
+                SceneManager.LoadScene(3);
+
+            }
+        }
+
 
     }
 
@@ -111,19 +127,19 @@ public class Cliente : MonoBehaviour
     }
     public void Ac()
     {
-
+        Complentado=true;
         Oj.comprobar();
         Destroy(x);
 
-        puntos += 10;
-
-        tex.text = puntos.ToString();
+        
 
         e();
         sp.h();
         s();
-        
 
+        puntos += 10;
+
+        tex.text = puntos.ToString();
     }
 
     public void e()

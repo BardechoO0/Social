@@ -1,10 +1,12 @@
 using System.Collections;
+using Microsoft.Win32.SafeHandles;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Tiempo : MonoBehaviour
 {
-    public int t = 300;
+    public int t = 10;
 
     [SerializeField] TextMeshProUGUI tiemp;
     void Start()
@@ -24,8 +26,17 @@ public class Tiempo : MonoBehaviour
 
         StartCoroutine(tiempo());
 
-        print(t);
+        if (t <= 0)
+        {
 
+            siguiente();
+        }
+
+    }
+
+    void siguiente()
+    {
+        SceneManager.LoadScene(2);
     }
     void Update()
     {
