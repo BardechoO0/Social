@@ -11,6 +11,14 @@ public class ObjectPicker : MonoBehaviour
     public List<PlaceableSpot> placeOrder; // Lista de puntos en orden
     private int currentStep = 0; // Paso actual del proceso
 
+
+
+
+
+
+    [SerializeField] Platos pl;
+    
+   
     void Update()
     {
         if (Input.GetKeyDown(interactKey))
@@ -61,6 +69,8 @@ public class ObjectPicker : MonoBehaviour
 
                 // Soltar el objeto
                 heldObject = null;
+
+                pl.N_paso = currentStep;
             }
             else
             {

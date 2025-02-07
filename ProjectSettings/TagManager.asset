@@ -8,6 +8,8 @@ TagManager:
   - Plato_2
   - Plato_3
   - ella me dice ola
+  - Player_1
+  - Plato
   layers:
   - Default
   - TransparentFX
@@ -17,14 +19,14 @@ TagManager:
   - UI
   - Placeable
   - Pickupable
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Plato_1_1
+  - Plato_1_2
+  - Plato_1_3
+  - Plato_2_1
+  - Plato_2_2
+  - Plato_3_1
+  - Plato_3_2
+  - Plato_3_3
   - 
   - 
   - 

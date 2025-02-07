@@ -1,8 +1,12 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Giro : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public KeyCode Arriba = KeyCode.UpArrow;
+    public KeyCode Abajo = KeyCode.DownArrow;
+    public KeyCode Derecha = KeyCode.RightArrow;
+    public KeyCode Izquierda = KeyCode.LeftArrow;
     void Start()
     {
         
@@ -11,6 +15,26 @@ public class Giro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(Arriba))
+        {
+
+            transform.rotation = Quaternion.Euler(0f, 0f, 90f);
+
+
+        }else  if (Input.GetKeyDown(Abajo))
+        {
+
+            transform.rotation = Quaternion.Euler(0f, 0f, -90f);
+        }
+        else if (Input.GetKeyDown(Derecha))
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        }
+        else if (Input.GetKeyDown(Izquierda))
+
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+
+        }
     }
 }

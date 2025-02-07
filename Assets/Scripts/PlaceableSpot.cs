@@ -6,7 +6,7 @@ public class PlaceableSpot : MonoBehaviour
 {
     public Sprite newSprite;
     public float timeToChange = 2f;
-    private List<GameObject> placedObjects = new List<GameObject>();
+    public List<GameObject> placedObjects = new List<GameObject>();
 
     public int N = 0;
 
@@ -26,8 +26,22 @@ public class PlaceableSpot : MonoBehaviour
         placedObjects.Add(obj); // Guarda qué objetos ya han sido colocados aquí
     }
 
-    
+    public bool CanPlaceObject_2(GameObject obj)
+    {
+
+        return placedObjects.Contains(obj);
 
 
-    
+    }
+
+    private void Update()
+    {
+        if ((x.gameObject.tag=="Untagged"))
+        {
+            x.gameObject.tag = "Plato_1";
+        }
+    }
+
+
+
 }

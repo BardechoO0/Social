@@ -13,7 +13,9 @@ public class Cliente : MonoBehaviour
 
     public int N_p;
 
-    [SerializeField] Platos pl;
+    
+
+    [SerializeField] Intancia_platos Oj;
 
     void Start()
     {
@@ -51,17 +53,24 @@ public class Cliente : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == gameObject.tag && N_p == pl.N_paso) {
+        if (collision.gameObject.tag == gameObject.tag) {
 
-            sp.h();
 
-            s();
+            Ac();
+            Destroy(collision.gameObject);
 
-            Destroy(x);
+
+        }
+    }
+
+    public void Ac()
+    {
+        Oj.comprobar();
+        Destroy(x);
+        sp.h();
+        s();
         
 
-            Destroy(collision.gameObject);
-        }
     }
 
     public void s()
