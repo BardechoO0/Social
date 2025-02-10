@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Cliente : MonoBehaviour
 {
+    [SerializeField] Cojer_objeto Cj;
+
     [SerializeField] Vida vd;
 
     [SerializeField] Spawn_Clientes sp;
@@ -104,7 +106,7 @@ public class Cliente : MonoBehaviour
 
     IEnumerator tiempo()
     {
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(90f);
         if (Complentado == false) {
 
             vd.setActiveSprite(1);
@@ -131,6 +133,7 @@ public class Cliente : MonoBehaviour
         Oj.comprobar();
         Destroy(x);
 
+        Cj.ckeker();
         
 
         e();

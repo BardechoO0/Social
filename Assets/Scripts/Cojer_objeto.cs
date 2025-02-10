@@ -110,7 +110,19 @@ public class Cojer_objeto : MonoBehaviour
             {
                 x.transform.position = mano.position;
             }
+
+            
         
         }
+        
+    }
+
+    public void ckeker() 
+    {
+
+        activo = false;
+        inHand = false;
+
+
     }
 }
