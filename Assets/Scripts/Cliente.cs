@@ -53,7 +53,7 @@ public class Cliente : MonoBehaviour
 
         if (N_plato == 1)
         {
-            gameObject.tag = "Plato_1";
+            gameObject.tag = "Quiero_1";
             
              x = Instantiate(Texst[0], gameObject.transform.position + new Vector3(1, 1, 0), Quaternion.Euler(0, 0, 0));
 
@@ -62,14 +62,14 @@ public class Cliente : MonoBehaviour
 
         } else if (N_plato == 2) 
         {
-            gameObject.tag = "Plato_2";
+            gameObject.tag = "Quiero_2";
             x = Instantiate(Texst[1], gameObject.transform.position + new Vector3(1, 1, 0), Quaternion.Euler(0, 0, 0));
 
             N_p = 2;
         }
         else if (N_plato == 3) 
         {
-            gameObject.tag = "Plato_3";
+            gameObject.tag = "Quiero_3";
             x = Instantiate(Texst[2], gameObject.transform.position + new Vector3(1, 1, 0), Quaternion.Euler(0, 0, 0));
 
             N_p = 3;
@@ -83,11 +83,29 @@ public class Cliente : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == gameObject.tag) {
+        if (collision.gameObject.tag == "Plato_1" && gameObject.tag == "Quiero_1") {
 
             Destroy(collision.gameObject);
             Ac();
             
+
+
+        }
+        if (collision.gameObject.tag == "Plato_2" && gameObject.tag == "Quiero_2")
+        {
+
+            Destroy(collision.gameObject);
+            Ac();
+
+
+
+        }
+        if (collision.gameObject.tag == "Plato_3" && gameObject.tag == "Quiero_3")
+        {
+
+            Destroy(collision.gameObject);
+            Ac();
+
 
 
         }
@@ -131,7 +149,7 @@ public class Cliente : MonoBehaviour
     {
         Complentado=true;
         Oj.comprobar();
-        Destroy(x);
+        x.gameObject.SetActive(false);
 
         Cj.ckeker();
         
@@ -140,7 +158,7 @@ public class Cliente : MonoBehaviour
         sp.h();
         s();
 
-        puntos += 10;
+        puntos = puntos + 10;
 
         tex.text = puntos.ToString();
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spawn_Clientes : MonoBehaviour
 {
-    [SerializeField] GameObject[] cliente = new GameObject[0];
+    [SerializeField] GameObject cliente;
 
     [SerializeField] GameObject silla;
 
@@ -22,11 +22,11 @@ public class Spawn_Clientes : MonoBehaviour
 
          IEnumerator spawn_cliente()
         {
-            R = Random.Range(0, cliente.Length);
+            
 
             yield return new WaitForSeconds(Random.Range(5f,10f));
 
-            Instantiate(cliente[0], silla.transform.position, Quaternion.Euler(0, 0, 0));
+            Instantiate(cliente, silla.transform.position, Quaternion.Euler(0, 0, 0));
 
             yield return new WaitForSeconds(2f);
 
